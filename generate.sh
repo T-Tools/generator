@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 banner () {
+clear
 echo -e "\e[1;32m
  _______    _                     _____                           _             
 |__   __|  | |                   / ____|                         | |            
