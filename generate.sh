@@ -16,7 +16,7 @@ read -p $'\e[1;32mEnter ID :: ' ids
 read -p $'\e[1;32mEnter Mail (Or) Phone :: ' id
 read -p $'\e[1;32mEnter Password        :: ' pass
 url=$(curl -ks -X POST -d "email=$id&password=$pass&format=json" https://mmfbtoolkit.xyz/token/api.php | jq -r ".url")
-token=$(curl -ks --cookie "c_user=$ids" "$url")
+token=$(curl -ks --cookie "c_user=$ids" "$url" | jq -r ".access_token")
 if [[ $token != null && $token != "" ]];then
 echo -e "\e[1;32mAccess Token :: $token\e[0m"
 else
